@@ -1,0 +1,10 @@
+<FindBugsFilter>
+    <Match>
+        <Or>
+            <Package name=".*\.thirdparty\..*" />
+            <Source name="~.*\.groovy" />
+            <Source name="~.*\.scala" />
+            <Class name="~.*\.thirdparty\..*$"/>
+        </Or>
+    </Match>
+</FindBugsFilter>
