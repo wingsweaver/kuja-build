@@ -41,6 +41,7 @@
         <kuja-build-resources.version>1.0.0</kuja-build-resources.version>
         <maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-resources-plugin.version>3.2.0</maven-resources-plugin.version>
         <maven-javadoc-plugin.version>3.4.1</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -100,6 +101,30 @@
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
                     <failOnWarning>true</failOnWarning>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Project-GroupId>${project.groupId}</Project-GroupId>
+                            <Project-ArtifactId>${project.artifactId}</Project-ArtifactId>
+                            <Project-Version>${project.version}</Project-Version>
+                            <build-time>${maven.build.timestamp}</build-time>
+                            <Git-Dirty>${git.dirty}</Git-Dirty>
+                            <Git-Branch>${git.branch}</Git-Branch>
+                            <Git-Commit-Id>${git.commit.id}</Git-Commit-Id>
+                            <Git-Commit-Time>${git.commit.time}</Git-Commit-Time>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
             <plugin>
