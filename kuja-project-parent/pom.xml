@@ -118,10 +118,9 @@
                             <Project-GroupId>${project.groupId}</Project-GroupId>
                             <Project-ArtifactId>${project.artifactId}</Project-ArtifactId>
                             <Project-Version>${project.version}</Project-Version>
-                            <build-time>${maven.build.timestamp}</build-time>
-                            <Git-Dirty>${git.dirty}</Git-Dirty>
                             <Git-Branch>${git.branch}</Git-Branch>
-                            <Git-Commit-Id>${git.commit.id}</Git-Commit-Id>
+                            <Git-Commit-Id-Full>${git.commit.id.full}</Git-Commit-Id-Full>
+                            <Git-Commit-Id-Abbrev>${git.commit.id.abbrev}</Git-Commit-Id-Abbrev>
                             <Git-Commit-Time>${git.commit.time}</Git-Commit-Time>
                         </manifestEntries>
                     </archive>
@@ -593,15 +592,7 @@
                 </plugins>
             </build>
         </profile>
-        <!-- 用于单元测试 -->
-        <profile>
-            <id>test</id>
-            <properties>
-                <maven-test.skip>false</maven-test.skip>
-                <maven-failsafe-plugin.skip>false</maven-failsafe-plugin.skip>
-            </properties>
-        </profile>
-        <!-- 用于严格检查 -->
+        <!-- 用于检查 -->
         <profile>
             <id>verify</id>
             <properties>
