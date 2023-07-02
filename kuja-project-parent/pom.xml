@@ -496,7 +496,7 @@
                     <verbose>false</verbose>
                     <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
                     <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                    <generateGitPropertiesFilename>${project.build.outputDirectory}/META-INF/${project.groupId}/${project.artifactId}/git.properties
+                    <generateGitPropertiesFilename>${project.build.outputDirectory}/META-INF/git/${project.groupId}/${project.artifactId}/git.properties
                     </generateGitPropertiesFilename>
                     <format>properties</format>
                     <failOnNoGitDirectory>false</failOnNoGitDirectory>
